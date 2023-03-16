@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <title> Geocoder App</title>
+  <head>
+    <link href="../static/main.css" rel = "stylesheet">
+  </head>
+    <body>
+      <div class = "container">
+        <h1>Super Geocoder</h1>
+        <h3> Please upload a file to find the co ordinates</h3>
+        <h3>Ensure that your file is a csv with a column named Address.</h3>
+        <h3>The entire address should be in the Address column</h3>
+        <div class="message">
+          {{text | safe}}
+        </div>
+        <form action = "{{url_for('success')}}" method = "POST" enctype="multipart/form-data">
+        <input type = "file"  accept=".csv" name="file"><br>
+          <button type = "submit"> Submit </button>
+        </form>
+      </div>
+    </body>
+</html>
